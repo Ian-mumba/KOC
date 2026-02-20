@@ -326,9 +326,9 @@ function renderProducts() {
     <div class="product">
       <img src="${product.img}" alt="${product.name}">
       <div class="product-details">
-        <h3>${product.name}</h3>
+        <h3>K{product.name}</h3>
         <div class="price">
-          ${product.originalPrice ? `<span class="original-price">$${product.originalPrice}</span>` : ""}
+          {product.originalPrice ? `<span class="original-price">$${product.originalPrice}</span>` : ""}
           $${product.price}
         </div>
         <a href="products.html" class="btn">View Product</a>
@@ -365,4 +365,5 @@ renderProducts();
 </body>
 
 </html>
+
 
