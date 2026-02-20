@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>K.O.C Collections | Premium Quality Goods</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+:root {
+  --primary: #111;
+  --accent: #e91e63;
+  --secondary: #9c27b0;
+  --bg: #f4f4f4;
+  --transition: 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: #333;
+}
+
+/* HEADER */
+header {
+  background: var(--primary);
+  color: #fff;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 60px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: var(--transition);
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* MOBILE MENU BUTTON */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+  url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1400&q=80') center/cover;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 3rem;
+}
+
+.hero p {
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background: var(--accent);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cta-button:hover {
+  background: var(--secondary);
+  transform: translateY(-3px);
+}
+
+/* SECTION */
+.container {
+  padding: 50px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+/* FILTERS */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.search-box {
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+}
+
+/* PRODUCTS */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.product {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: var(--transition);
+}
+
+.product:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.product img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.product-details {
+  padding: 20px;
+}
+
+.product h3 {
+  margin: 0 0 10px;
+}
+
+.price {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 10px;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background: var(--primary);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: var(--accent);
+}
+
+/* FOOTER */
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 30px;
+  margin-top: 50px;
+}
+
+/* ===================== */
+/* MOBILE RESPONSIVENESS */
+/* ===================== */
+
+@media (max-width: 768px) {
+
+  header {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    width: 100%;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  nav.active {
+    max-height: 300px;
+    margin-top: 15px;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+
+  .filters {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="logo.jpg" alt="logo">
+    <h2>K.O.C Collections</h2>
+  </div>
+
+  <i class="fas fa-bars menu-toggle" id="menu-toggle"></i>
+
+  <nav id="nav-links">
+    <a href="#"><i class="fas fa-home"></i> Home</a>
+    <a href="About.html"><i class="fas fa-store"></i> About</a>
+    <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Elevate Your Style</h2>
+  <p>Discover premium fashion that matches your personality.</p>
+  <button class="cta-button">Shop Now</button>
+</section>
+
+<div class="container">
+  <h2 class="section-title">Featured Products</h2>
+
+  <div class="filters">
+    <div>
+      <div class="btn"><a href="products.html">All Products</a></div>
+      <button class="filter-btn" data-filter="men">Men</button>
+      <button class="filter-btn" data-filter="women">Women</button>
+      <button class="filter-btn" data-filter="accessories">Accessories</button>
+    </div>
+    <input type="text" class="search-box" id="search-box" placeholder="Search...">
+  </div>
+
+  <div class="products" id="product-grid"></div>
+</div>
+
+<footer>
+  <p>&copy; 2026 K.O.C COLLECTIONS | All Rights Reserved.</p>
+</footer>
+
+<script>
+const inventory = [
+  { id: 1, name: "Minimalist Watch", price: 120, originalPrice: 150, img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500", category: "accessories" },
+  { id: 2, name: "Leather Jacket", price: 250, originalPrice: 300, img: "https://images.unsplash.com/photo-1551028150-64b9f398f678?w=500", category: "men" },
+  { id: 3, name: "Classic Sneakers", price: 85, img: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500", category: "men" },
+  { id: 4, name: "Silk Summer Dress", price: 180, img: "https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?w=500", category: "women" }
+];
+
+let currentFilter = "all";
+let searchQuery = "";
+
+const grid = document.getElementById("product-grid");
+const filterButtons = document.querySelectorAll(".filter-btn");
+const searchBox = document.getElementById("search-box");
+
+function renderProducts() {
+  let filtered = inventory.filter(product =>
+    (currentFilter === "all" || product.category === currentFilter) &&
+    product.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  grid.innerHTML = filtered.map(product => `
+    <div class="product">
+      <img src="${product.img}" alt="${product.name}">
+      <div class="product-details">
+        <h3>${product.name}</h3>
+        <div class="price">
+          ${product.originalPrice ? `<span class="original-price">$${product.originalPrice}</span>` : ""}
+          $${product.price}
+        </div>
+        <a href="products.html" class="btn">View Product</a>
+      </div>
+    </div>
+  `).join("");
+}
+
+filterButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    filterButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    currentFilter = btn.dataset.filter;
+    renderProducts();
+  });
+});
+
+searchBox.addEventListener("input", e => {
+  searchQuery = e.target.value;
+  renderProducts();
+});
+
+/* MOBILE MENU TOGGLE */
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+renderProducts();
+</script>
+
+</body>
+</html>
