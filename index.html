@@ -324,12 +324,12 @@ function renderProducts() {
 
   grid.innerHTML = filtered.map(product => `
     <div class="product">
-      <img src="K{product.img}" alt="K{product.name}">
+      <img src="${product.img}" alt="${product.name}">
       <div class="product-details">
-        <h3>K{product.name}</h3>
+        <h3>${product.name}</h3>
         <div class="price">
-          K{product.originalPrice ? `<span class="original-price">KK{product.originalPrice}</span>` : ""}
-          KK{product.price}
+          ${product.originalPrice ? `<span class="original-price">$${product.originalPrice}</span>` : ""}
+          $${product.price}
         </div>
         <a href="products.html" class="btn">View Product</a>
       </div>
@@ -365,3 +365,4 @@ renderProducts();
 </body>
 
 </html>
+
